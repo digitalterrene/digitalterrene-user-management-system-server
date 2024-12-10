@@ -10,7 +10,11 @@ app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // CORS and BodyParser setup
 const corsOptions = {
-  origin: ["http://localhost:3001", "http://localhost:3000"],
+  origin: [
+    "http://localhost:3001",
+    "https://user-management-system-client-two.vercel.app/",
+    "http://localhost:3000",
+  ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
   optionsSuccessStatus: 204,
