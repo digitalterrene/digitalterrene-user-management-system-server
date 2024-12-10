@@ -106,13 +106,13 @@ const signinUser = async (req, res) => {
         maxAge: 1000 * 60 * 60,
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "Strict",
+        // sameSite: "Strict",
       });
       res.cookie("CSRF-TOKEN", csrfToken, {
         maxAge: 1000 * 60 * 60,
         httpOnly: false,
         secure: process.env.NODE_ENV === "production",
-        sameSite: "Strict",
+        // sameSite: "Strict",
       });
 
       return res.status(200).json({ message: "User successfully signed in" });
