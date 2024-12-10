@@ -9,6 +9,7 @@ const app = express();
 app.use(bodyParser.json({ limit: "50mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // CORS and BodyParser setup
+app.set("trust proxy", 1);
 const corsOptions = {
   origin: [
     "http://localhost:3001",
