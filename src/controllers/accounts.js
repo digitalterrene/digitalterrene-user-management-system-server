@@ -53,13 +53,13 @@ const signupNewUser = async (req, res) => {
       maxAge: 1000 * 60 * 60,
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
+      // sameSite: "Strict",
     });
     res.cookie("CSRF-TOKEN", csrfToken, {
       maxAge: 1000 * 60 * 60,
       httpOnly: false,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "Strict",
+      // sameSite: "Strict",
     });
 
     res.status(201).json({ message: "User created successfully" });
