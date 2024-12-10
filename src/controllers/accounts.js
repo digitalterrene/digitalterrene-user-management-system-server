@@ -103,12 +103,11 @@ const signinUser = async (req, res) => {
         .updateOne({ _id: new ObjectId(_id) }, { $set: { token } });
 
       res.cookie("AuthToken", token, {
-        maxAge: 1000 * 60 * 60 * 24,
+        maxAge: 1000 * 60 * 60,
         httpOnly: true,
         secure: process.env.NODE_ENV === "production",
         sameSite: "Strict",
       });
-
       res.cookie("CSRF-TOKEN", csrfToken, {
         maxAge: 1000 * 60 * 60,
         httpOnly: false,
